@@ -1,10 +1,10 @@
-pipeline{
+pipeline {
   agent any
-  stage{
-    stage('Buil Image'){
+  stages {
+    stage('Build Image') {
       steps {
-          sh "pwd"
-          sh 'docker Build -t Lab01:10 .'
+        sh "pwd"
+        sh 'docker build -t Lab01:10 .'
       }
     }
   }
