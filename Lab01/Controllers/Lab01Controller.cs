@@ -57,7 +57,7 @@ namespace Lab01.Controllers
             }
         }
          [Route("Version")]
-        public string AddHistory()
+        public string GetVersion()
         {
             _logger.LogInformation("Version");
 
