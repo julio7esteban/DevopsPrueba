@@ -24,9 +24,9 @@ pipeline {
     }
      stage('Deploy Image ') {
       steps {
-        sh "docker stop $APPNAME"
-        sh "docker rm $APPNAME"
-        sh 'docker run -d  --name $APPNAME -p $PORT:80 $REGISTRY/$IMAGE:$VERSION '
+        sh "docker stop $APPNAMECONTAINER"
+        sh "docker rm $APPNAMECONTAINER"
+        sh 'docker run -d  --name $APPNAMECONTAINER -p $PORT:80 $REGISTRY/$IMAGE:$VERSION '
       }
     }
   }
