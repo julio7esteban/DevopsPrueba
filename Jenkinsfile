@@ -23,7 +23,7 @@ pipeline {
     }
      stage('Deploy Image ') {
       steps {
-        sh "docker stop $"
+        sh "docker stop $APPNAME"
         sh "docker rm $APPNAME"
         sh 'docker run -d  --name $APPNAME -p $PORT:80 $REGISTRY/$IMAGE:$VERSION '
       }
