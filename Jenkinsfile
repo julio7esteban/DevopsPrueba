@@ -3,11 +3,11 @@ pipeline {
   environment {
     APPNAME = "lab01"
     IMAGE = "lab01"
-    VERSION ="v1.1"
+    VERSION ="v1.2"
     REGISTRY="julioest77"
     DOCKER_HUB_LOGIN = credentials('dockerhub-julioest77')
     PORT = "8091"
-    APPNAMECONTAINER = "rolo_lab01"
+
   }
   stages {
     stage('Build Image') {
@@ -24,8 +24,9 @@ pipeline {
     }
      stage('Deploy Image ') {
       steps {
-        sh "docker stop $APPNAMECONTAINER"
-        sh "docker rm $APPNAMECONTAINER"
+        sh "docker stop $APPNAME"
+        sh "docker rm $APPNAME"
+        sh "docker pull $REGISTRY/$IMAGE:$VERSION"
         sh 'docker run -d  --name $APPNAME -p $PORT:80 $REGISTRY/$IMAGE:$VERSION '
       }
     }
