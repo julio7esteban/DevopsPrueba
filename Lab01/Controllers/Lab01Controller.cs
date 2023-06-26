@@ -56,5 +56,23 @@ namespace Lab01.Controllers
                 return "ERROR";
             }
         }
+         [Route("Version")]
+        public string AddHistory()
+        {
+            _logger.LogInformation("Version");
+
+            try
+            {
+                var path = "version";
+
+               
+                return "5.2";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error en Version");
+                return "ERROR";
+            }
+        }
     }
 }
