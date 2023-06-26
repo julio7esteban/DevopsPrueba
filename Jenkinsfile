@@ -26,7 +26,7 @@ pipeline {
       steps {
         sh "docker stop $APPNAMECONTAINER"
         sh "docker rm $APPNAMECONTAINER"
-        sh 'docker run -d  --name $lab01 -p $PORT:80 $REGISTRY/$IMAGE:$VERSION '
+        sh 'docker run -d  --name $APPNAME -p $PORT:80 $REGISTRY/$IMAGE:$VERSION '
       }
     }
   }
