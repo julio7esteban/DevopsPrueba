@@ -7,6 +7,7 @@ pipeline {
     REGISTRY="julioest77"
     DOCKER_HUB_LOGIN = credentials('dockerhub-julioest77')
     PORT = "8091"
+    APPNAMECONTAINER = " PORT = "8091""
   }
   stages {
     stage('Build Image') {
