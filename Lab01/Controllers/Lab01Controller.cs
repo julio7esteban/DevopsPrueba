@@ -66,7 +66,7 @@ namespace Lab01.Controllers
                 var path = "version";
 
                
-                return "5.2";
+                return "5.5";
             }
             catch (Exception ex)
             {
