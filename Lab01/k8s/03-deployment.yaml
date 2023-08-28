@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  nginx-deployment
-  namespace: default
+  name: nginx-deployment
+  namespace: n3
   labels:
-    app:  nginx
+    app: nginx
 spec:
   selector:
     matchLabels:
@@ -45,7 +45,7 @@ spec:
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /_status/healthz
+            path: /
             port: 80
           initialDelaySeconds: 5
           timeoutSeconds: 2
@@ -61,8 +61,5 @@ spec:
         ports:
         - containerPort:  80
           name:  myjob
-        volumeMounts:
-        - name: localtime
-          mountPath: /etc/localtime
       restartPolicy: Always
 ---
