@@ -51,14 +51,8 @@ spec:
           successThreshold: 1
           failureThreshold: 3
           periodSeconds: 10
-        env:
-        - name: DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: myjob
-              key: DB_HOST
         ports:
         - containerPort:  80
-          name:  myjob
+          name:  nginx
       restartPolicy: Always
 ---
